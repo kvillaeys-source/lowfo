@@ -1,0 +1,2132 @@
+{
+  "schema_version": 1,
+  "data_sources": [
+    {
+      "source_key": "anses_ciqual_2025",
+      "title": "Anses — Table de composition nutritionnelle Ciqual 2025",
+      "url": "https://doi.org/10.57745/RDMHWY",
+      "license_name": "Licence Ouverte 2.0",
+      "reuse_status": "allowed",
+      "reuse_basis": "Référence primaire de la version Ciqual 2025. Valeurs attribuées à l’Anses et à la table Ciqual 2025.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "ciqual_2025_mymmealmaker",
+      "title": "MyMealMaker — consultation miroir des tables Ciqual 2025",
+      "url": "https://mymealmaker.com/blog/table-ciqual",
+      "license_name": "Licence Ouverte Etalab annoncée par le portail pour les données Ciqual reprises",
+      "reuse_status": "allowed",
+      "reuse_basis": "Miroir consulté car les portails officiels étaient indisponibles. Le portail indique reprendre les données Ciqual 2025 sous licence ouverte avec attribution. Les valeurs <x sont affichées comme borne x sur ce miroir.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "ciqual_2025_davidcosta",
+      "title": "David Costa / Yumia — tableau de 82 aliments d’après Ciqual 2025",
+      "url": "https://davidcosta.fr/tableau-des-calories-des-aliments/",
+      "license_name": "Tableau secondaire citant Ciqual 2025",
+      "reuse_status": "allowed",
+      "reuse_basis": "Miroir de secours qui attribue explicitement les valeurs à Ciqual 2025 de l’Anses. Valeurs publiées arrondies; attribution conservée.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "monash_step1_2026",
+      "title": "Monash University — tableau officiel des alternatives de l’étape 1, 2026",
+      "url": "https://monashfodmap.com/documents/207/Monash_FODMAP_Resource_-_Step_1_Low_FODMAP_Diet.pdf",
+      "license_name": "Consultation et citation externe; aucune fiche ni mesure de l’application recopiée",
+      "reuse_status": "permission_required",
+      "reuse_basis": "Source de conception et de contrôle documentaire uniquement. LOWFO conserve une trace de revue et des liens publics; aucune fiche ou mesure issue de la base de l’application n’est reproduite.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "monash_shopping_list_2025",
+      "title": "Monash FODMAP — Low FODMAP Shopping List, 3 février 2025",
+      "url": "https://www.monashfodmap.com/blog/low-fodmap-shopping-list/",
+      "license_name": "Consultation et citation externe; liste publique indicative",
+      "reuse_status": "permission_required",
+      "reuse_basis": "Source publique de repères qualitatifs. La liste indique les légumes faibles à une portion standard de 75 g et distingue les préparations.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "monash_public_oats_recipe",
+      "title": "Monash FODMAP — Overnight Oats, recette publique",
+      "url": "https://www.monashfodmap.com/recipe/overnight-oats/",
+      "license_name": "Consultation et citation externe; recettes LOWFO rédigées indépendamment",
+      "reuse_status": "permission_required",
+      "reuse_basis": "La quantité d’avoine de référence est comparée à la recette publique Monash; LOWFO ne copie pas sa méthode ni son texte.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "monash_app_help",
+      "title": "Monash FODMAP — aide de l’application (poids crus et cuits)",
+      "url": "https://www.monashfodmap.com/get-app-help/",
+      "license_name": "Consultation et citation externe",
+      "reuse_status": "permission_required",
+      "reuse_basis": "Référence pour distinguer le poids cru des fruits/légumes et le poids cuit du riz/pâtes; aucune donnée du Food Guide n’est copiée.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "monash_public_rice_recipe",
+      "title": "Monash FODMAP — recette publique Nasi Goreng",
+      "url": "https://monashfodmap.com/documents/26/Monash_FODMAP_-_Low_FODMAP_Nasi_Goreng.pdf",
+      "license_name": "Consultation et citation externe; recette LOWFO rédigée indépendamment",
+      "reuse_status": "permission_required",
+      "reuse_basis": "Référence publique de portion cuite de riz dans une recette Low FODMAP; la recette originale n’est pas reproduite.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "fodmap_everyday_white_rice",
+      "title": "FODMAP Everyday — No FODMAP Rice (portion publique rapportée depuis Monash)",
+      "url": "https://www.fodmapeveryday.com/recipes/no-fodmap-rice/",
+      "license_name": "Consultation et citation d’un article public secondaire",
+      "reuse_status": "permission_required",
+      "reuse_basis": "L’article rapporte la portion faible Monash pour le riz blanc cuit à 190 g. Il sert de source publique secondaire pour lire la portion; aucune entrée du Food Guide n’est importée.",
+      "record_status": "published"
+    },
+    {
+      "source_key": "monash_multiple_green_serves_2026",
+      "title": "Monash University — FAQ, portions vertes combinées dans un repas",
+      "url": "https://www.monashfodmap.com/about-fodmap-and-ibs/frequently-asked-questions/",
+      "license_name": "Consultation et citation externe; aucune donnée de l’application recopiée",
+      "reuse_status": "permission_required",
+      "reuse_basis": "La FAQ publique indique que plusieurs portions vertes peuvent être associées dans un repas; les quantités exactes restent celles des sources publiques citées.",
+      "record_status": "published"
+    }
+  ],
+  "ingredients": [
+    {
+      "ingredient_key": "food_rice",
+      "name_fr": "Riz blanc cru",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_oats",
+      "name_fr": "Flocons d’avoine",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_potato",
+      "name_fr": "Pomme de terre",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_egg",
+      "name_fr": "Œuf entier",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_chicken",
+      "name_fr": "Blanc de poulet nature",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_turkey",
+      "name_fr": "Dinde nature",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_beef",
+      "name_fr": "Bœuf haché 5 % MG",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_salmon",
+      "name_fr": "Saumon d’élevage",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_cod",
+      "name_fr": "Cabillaud",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_tuna",
+      "name_fr": "Thon au naturel",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_shrimp",
+      "name_fr": "Crevettes",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_spinach",
+      "name_fr": "Épinards",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_carrot",
+      "name_fr": "Carotte",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_zucchini",
+      "name_fr": "Courgette",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_green_beans",
+      "name_fr": "Haricots verts",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_eggplant",
+      "name_fr": "Aubergine",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_cucumber",
+      "name_fr": "Concombre",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_lettuce",
+      "name_fr": "Laitue",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_green_pepper",
+      "name_fr": "Poivron vert",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_broccoli",
+      "name_fr": "Brocoli (tête)",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_cabbage",
+      "name_fr": "Chou blanc",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_pak_choi",
+      "name_fr": "Pak choï",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_kale",
+      "name_fr": "Chou kale",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_oyster_mushroom",
+      "name_fr": "Pleurotes",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_emmental",
+      "name_fr": "Emmental affiné",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_olive_oil",
+      "name_fr": "Huile d’olive",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_garlic_oil",
+      "name_fr": "Huile d’olive infusée à l’ail, filtrée",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_lemon",
+      "name_fr": "Jus de citron",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "record_status": "published"
+    },
+    {
+      "ingredient_key": "food_butter",
+      "name_fr": "Beurre doux",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "record_status": "published"
+    }
+  ],
+  "ingredient_preparations": [
+    {
+      "preparation_id": "prep_rice",
+      "ingredient_key": "food_rice",
+      "preparation_fr": "Céréale · poids sec avant cuisson",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Riz blanc, cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_oats",
+      "ingredient_key": "food_oats",
+      "preparation_fr": "Flocons secs",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "citation_locator": "Flocons d’avoine, Ciqual 2025",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_potato",
+      "ingredient_key": "food_potato",
+      "preparation_fr": "Crue, partie comestible",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "citation_locator": "Pomme de terre crue",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_egg",
+      "ingredient_key": "food_egg",
+      "preparation_fr": "Cru, poids sans coquille",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Œuf cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_chicken",
+      "ingredient_key": "food_chicken",
+      "preparation_fr": "Cru, sans peau, non mariné",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Poulet, filet sans peau cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_turkey",
+      "ingredient_key": "food_turkey",
+      "preparation_fr": "Viande crue, non marinée",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Dinde, viande crue",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_beef",
+      "ingredient_key": "food_beef",
+      "preparation_fr": "Cru, nature, sans assaisonnement ajouté",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Bœuf, steak haché 5 % MG cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_salmon",
+      "ingredient_key": "food_salmon",
+      "preparation_fr": "Cru, nature",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Saumon, élevage cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_cod",
+      "ingredient_key": "food_cod",
+      "preparation_fr": "Cru, nature",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Cabillaud cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_tuna",
+      "ingredient_key": "food_tuna",
+      "preparation_fr": "Appertisé, égoutté, sans aromates",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Thon au naturel, appertisé, égoutté",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_shrimp",
+      "ingredient_key": "food_shrimp",
+      "preparation_fr": "Cuites, décortiquées, nature",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Crevette, cuite",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_spinach",
+      "ingredient_key": "food_spinach",
+      "preparation_fr": "Crus, feuilles",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Épinard cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_carrot",
+      "ingredient_key": "food_carrot",
+      "preparation_fr": "Crue, épluchée ou brossée",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Carotte crue",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_zucchini",
+      "ingredient_key": "food_zucchini",
+      "preparation_fr": "Crue, chair et peau",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Courgette, chair et peau, crue",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_green_beans",
+      "ingredient_key": "food_green_beans",
+      "preparation_fr": "Crus, équeutés",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Haricot vert cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_eggplant",
+      "ingredient_key": "food_eggplant",
+      "preparation_fr": "Crue, chair et peau",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Aubergine crue",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_cucumber",
+      "ingredient_key": "food_cucumber",
+      "preparation_fr": "Cru, chair et peau",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Concombre, chair et peau, cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_lettuce",
+      "ingredient_key": "food_lettuce",
+      "preparation_fr": "Crue, feuilles",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Laitue crue",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_green_pepper",
+      "ingredient_key": "food_green_pepper",
+      "preparation_fr": "Cru, partie comestible",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Poivron vert cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_broccoli",
+      "ingredient_key": "food_broccoli",
+      "preparation_fr": "Cru, sommités florales, sans tige épaisse",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Brocoli cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_cabbage",
+      "ingredient_key": "food_cabbage",
+      "preparation_fr": "Cru, émincé",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Chou blanc cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_pak_choi",
+      "ingredient_key": "food_pak_choi",
+      "preparation_fr": "Cru, feuilles et tiges",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Chou chinois pak choï cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_kale",
+      "ingredient_key": "food_kale",
+      "preparation_fr": "Cru, feuilles sans tiges dures",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Chou kale cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_oyster_mushroom",
+      "ingredient_key": "food_oyster_mushroom",
+      "preparation_fr": "Crus, parties comestibles",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Champignon, pleurote cru",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_emmental",
+      "ingredient_key": "food_emmental",
+      "preparation_fr": "Fromage à pâte dure, râpé ou en dés",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Emmental ou emmenthal",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_olive_oil",
+      "ingredient_key": "food_olive_oil",
+      "preparation_fr": "Huile pure",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "citation_locator": "Huile d’olive",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_garlic_oil",
+      "ingredient_key": "food_garlic_oil",
+      "preparation_fr": "Huile seule, sans morceaux ni dépôt d’ail",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "citation_locator": "Huile d’olive (proxy nutritionnel pour l’huile filtrée)",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_lemon",
+      "ingredient_key": "food_lemon",
+      "preparation_fr": "Fraîchement pressé",
+      "source_keys": [
+        "ciqual_2025_mymmealmaker"
+      ],
+      "citation_locator": "Citron, chair sans peau et pépins, cru (valeur de référence)",
+      "record_status": "published"
+    },
+    {
+      "preparation_id": "prep_butter",
+      "ingredient_key": "food_butter",
+      "preparation_fr": "Nature",
+      "source_keys": [
+        "ciqual_2025_davidcosta"
+      ],
+      "citation_locator": "Beurre",
+      "record_status": "published"
+    }
+  ],
+  "nutrient_values": [
+    {
+      "nutrient_value_id": "nutr_rice_energy_kcal",
+      "ingredient_key": "food_rice",
+      "preparation_id": "prep_rice",
+      "nutrient": "energy_kcal",
+      "value": 350,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Riz blanc, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_rice_protein_g",
+      "ingredient_key": "food_rice",
+      "preparation_id": "prep_rice",
+      "nutrient": "protein_g",
+      "value": 7.02,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Riz blanc, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_rice_carbohydrate_g",
+      "ingredient_key": "food_rice",
+      "preparation_id": "prep_rice",
+      "nutrient": "carbohydrate_g",
+      "value": 77.5,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Riz blanc, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_rice_fat_g",
+      "ingredient_key": "food_rice",
+      "preparation_id": "prep_rice",
+      "nutrient": "fat_g",
+      "value": 0.79,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Riz blanc, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oats_energy_kcal",
+      "ingredient_key": "food_oats",
+      "preparation_id": "prep_oats",
+      "nutrient": "energy_kcal",
+      "value": 369,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Flocons d’avoine, Ciqual 2025, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oats_protein_g",
+      "ingredient_key": "food_oats",
+      "preparation_id": "prep_oats",
+      "nutrient": "protein_g",
+      "value": 10.6,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Flocons d’avoine, Ciqual 2025, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oats_carbohydrate_g",
+      "ingredient_key": "food_oats",
+      "preparation_id": "prep_oats",
+      "nutrient": "carbohydrate_g",
+      "value": 57.7,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Flocons d’avoine, Ciqual 2025, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oats_fat_g",
+      "ingredient_key": "food_oats",
+      "preparation_id": "prep_oats",
+      "nutrient": "fat_g",
+      "value": 7.8,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Flocons d’avoine, Ciqual 2025, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_potato_energy_kcal",
+      "ingredient_key": "food_potato",
+      "preparation_id": "prep_potato",
+      "nutrient": "energy_kcal",
+      "value": 80,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Pomme de terre crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_potato_protein_g",
+      "ingredient_key": "food_potato",
+      "preparation_id": "prep_potato",
+      "nutrient": "protein_g",
+      "value": 2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Pomme de terre crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_potato_carbohydrate_g",
+      "ingredient_key": "food_potato",
+      "preparation_id": "prep_potato",
+      "nutrient": "carbohydrate_g",
+      "value": 16.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Pomme de terre crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_potato_fat_g",
+      "ingredient_key": "food_potato",
+      "preparation_id": "prep_potato",
+      "nutrient": "fat_g",
+      "value": 0.1,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Pomme de terre crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_egg_energy_kcal",
+      "ingredient_key": "food_egg",
+      "preparation_id": "prep_egg",
+      "nutrient": "energy_kcal",
+      "value": 140,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Œuf cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_egg_protein_g",
+      "ingredient_key": "food_egg",
+      "preparation_id": "prep_egg",
+      "nutrient": "protein_g",
+      "value": 12.8,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Œuf cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_egg_carbohydrate_g",
+      "ingredient_key": "food_egg",
+      "preparation_id": "prep_egg",
+      "nutrient": "carbohydrate_g",
+      "value": 0.06,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Œuf cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_egg_fat_g",
+      "ingredient_key": "food_egg",
+      "preparation_id": "prep_egg",
+      "nutrient": "fat_g",
+      "value": 9.83,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Œuf cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_chicken_energy_kcal",
+      "ingredient_key": "food_chicken",
+      "preparation_id": "prep_chicken",
+      "nutrient": "energy_kcal",
+      "value": 110,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poulet, filet sans peau cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_chicken_protein_g",
+      "ingredient_key": "food_chicken",
+      "preparation_id": "prep_chicken",
+      "nutrient": "protein_g",
+      "value": 23.4,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poulet, filet sans peau cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_chicken_carbohydrate_g",
+      "ingredient_key": "food_chicken",
+      "preparation_id": "prep_chicken",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poulet, filet sans peau cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_chicken_fat_g",
+      "ingredient_key": "food_chicken",
+      "preparation_id": "prep_chicken",
+      "nutrient": "fat_g",
+      "value": 1.5,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poulet, filet sans peau cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_turkey_energy_kcal",
+      "ingredient_key": "food_turkey",
+      "preparation_id": "prep_turkey",
+      "nutrient": "energy_kcal",
+      "value": 108,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Dinde, viande crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_turkey_protein_g",
+      "ingredient_key": "food_turkey",
+      "preparation_id": "prep_turkey",
+      "nutrient": "protein_g",
+      "value": 22.6,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Dinde, viande crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_turkey_carbohydrate_g",
+      "ingredient_key": "food_turkey",
+      "preparation_id": "prep_turkey",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Dinde, viande crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_turkey_fat_g",
+      "ingredient_key": "food_turkey",
+      "preparation_id": "prep_turkey",
+      "nutrient": "fat_g",
+      "value": 1.93,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Dinde, viande crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_beef_energy_kcal",
+      "ingredient_key": "food_beef",
+      "preparation_id": "prep_beef",
+      "nutrient": "energy_kcal",
+      "value": 130,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Bœuf, steak haché 5 % MG cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_beef_protein_g",
+      "ingredient_key": "food_beef",
+      "preparation_id": "prep_beef",
+      "nutrient": "protein_g",
+      "value": 21.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Bœuf, steak haché 5 % MG cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_beef_carbohydrate_g",
+      "ingredient_key": "food_beef",
+      "preparation_id": "prep_beef",
+      "nutrient": "carbohydrate_g",
+      "value": 0.3,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Bœuf, steak haché 5 % MG cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_beef_fat_g",
+      "ingredient_key": "food_beef",
+      "preparation_id": "prep_beef",
+      "nutrient": "fat_g",
+      "value": 4.59,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Bœuf, steak haché 5 % MG cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_salmon_energy_kcal",
+      "ingredient_key": "food_salmon",
+      "preparation_id": "prep_salmon",
+      "nutrient": "energy_kcal",
+      "value": 193,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Saumon, élevage cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_salmon_protein_g",
+      "ingredient_key": "food_salmon",
+      "preparation_id": "prep_salmon",
+      "nutrient": "protein_g",
+      "value": 20.5,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Saumon, élevage cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_salmon_carbohydrate_g",
+      "ingredient_key": "food_salmon",
+      "preparation_id": "prep_salmon",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Saumon, élevage cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_salmon_fat_g",
+      "ingredient_key": "food_salmon",
+      "preparation_id": "prep_salmon",
+      "nutrient": "fat_g",
+      "value": 12.4,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Saumon, élevage cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cod_energy_kcal",
+      "ingredient_key": "food_cod",
+      "preparation_id": "prep_cod",
+      "nutrient": "energy_kcal",
+      "value": 77.4,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Cabillaud cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cod_protein_g",
+      "ingredient_key": "food_cod",
+      "preparation_id": "prep_cod",
+      "nutrient": "protein_g",
+      "value": 18.1,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Cabillaud cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cod_carbohydrate_g",
+      "ingredient_key": "food_cod",
+      "preparation_id": "prep_cod",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Cabillaud cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cod_fat_g",
+      "ingredient_key": "food_cod",
+      "preparation_id": "prep_cod",
+      "nutrient": "fat_g",
+      "value": 0.57,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Cabillaud cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_tuna_energy_kcal",
+      "ingredient_key": "food_tuna",
+      "preparation_id": "prep_tuna",
+      "nutrient": "energy_kcal",
+      "value": 143,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Thon au naturel, appertisé, égoutté, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_tuna_protein_g",
+      "ingredient_key": "food_tuna",
+      "preparation_id": "prep_tuna",
+      "nutrient": "protein_g",
+      "value": 26.8,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Thon au naturel, appertisé, égoutté, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_tuna_carbohydrate_g",
+      "ingredient_key": "food_tuna",
+      "preparation_id": "prep_tuna",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Thon au naturel, appertisé, égoutté, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_tuna_fat_g",
+      "ingredient_key": "food_tuna",
+      "preparation_id": "prep_tuna",
+      "nutrient": "fat_g",
+      "value": 3.94,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Thon au naturel, appertisé, égoutté, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_shrimp_energy_kcal",
+      "ingredient_key": "food_shrimp",
+      "preparation_id": "prep_shrimp",
+      "nutrient": "energy_kcal",
+      "value": 91.3,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Crevette, cuite, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_shrimp_protein_g",
+      "ingredient_key": "food_shrimp",
+      "preparation_id": "prep_shrimp",
+      "nutrient": "protein_g",
+      "value": 20.5,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Crevette, cuite, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_shrimp_carbohydrate_g",
+      "ingredient_key": "food_shrimp",
+      "preparation_id": "prep_shrimp",
+      "nutrient": "carbohydrate_g",
+      "value": 0.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Crevette, cuite, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_shrimp_fat_g",
+      "ingredient_key": "food_shrimp",
+      "preparation_id": "prep_shrimp",
+      "nutrient": "fat_g",
+      "value": 0.79,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Crevette, cuite, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_spinach_energy_kcal",
+      "ingredient_key": "food_spinach",
+      "preparation_id": "prep_spinach",
+      "nutrient": "energy_kcal",
+      "value": 33.3,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Épinard cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_spinach_protein_g",
+      "ingredient_key": "food_spinach",
+      "preparation_id": "prep_spinach",
+      "nutrient": "protein_g",
+      "value": 2.68,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Épinard cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_spinach_carbohydrate_g",
+      "ingredient_key": "food_spinach",
+      "preparation_id": "prep_spinach",
+      "nutrient": "carbohydrate_g",
+      "value": 3.06,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Épinard cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_spinach_fat_g",
+      "ingredient_key": "food_spinach",
+      "preparation_id": "prep_spinach",
+      "nutrient": "fat_g",
+      "value": 0.39,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Épinard cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_carrot_energy_kcal",
+      "ingredient_key": "food_carrot",
+      "preparation_id": "prep_carrot",
+      "nutrient": "energy_kcal",
+      "value": 30.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Carotte crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_carrot_protein_g",
+      "ingredient_key": "food_carrot",
+      "preparation_id": "prep_carrot",
+      "nutrient": "protein_g",
+      "value": 0.78,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Carotte crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_carrot_carbohydrate_g",
+      "ingredient_key": "food_carrot",
+      "preparation_id": "prep_carrot",
+      "nutrient": "carbohydrate_g",
+      "value": 5.16,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Carotte crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_carrot_fat_g",
+      "ingredient_key": "food_carrot",
+      "preparation_id": "prep_carrot",
+      "nutrient": "fat_g",
+      "value": 0.5,
+      "value_qualifier": "upper_bound",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Carotte crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_zucchini_energy_kcal",
+      "ingredient_key": "food_zucchini",
+      "preparation_id": "prep_zucchini",
+      "nutrient": "energy_kcal",
+      "value": 16.7,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Courgette, chair et peau, crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_zucchini_protein_g",
+      "ingredient_key": "food_zucchini",
+      "preparation_id": "prep_zucchini",
+      "nutrient": "protein_g",
+      "value": 1.21,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Courgette, chair et peau, crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_zucchini_carbohydrate_g",
+      "ingredient_key": "food_zucchini",
+      "preparation_id": "prep_zucchini",
+      "nutrient": "carbohydrate_g",
+      "value": 1.75,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Courgette, chair et peau, crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_zucchini_fat_g",
+      "ingredient_key": "food_zucchini",
+      "preparation_id": "prep_zucchini",
+      "nutrient": "fat_g",
+      "value": 0.32,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Courgette, chair et peau, crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_beans_energy_kcal",
+      "ingredient_key": "food_green_beans",
+      "preparation_id": "prep_green_beans",
+      "nutrient": "energy_kcal",
+      "value": 31.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Haricot vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_beans_protein_g",
+      "ingredient_key": "food_green_beans",
+      "preparation_id": "prep_green_beans",
+      "nutrient": "protein_g",
+      "value": 1.83,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Haricot vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_beans_carbohydrate_g",
+      "ingredient_key": "food_green_beans",
+      "preparation_id": "prep_green_beans",
+      "nutrient": "carbohydrate_g",
+      "value": 4.14,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Haricot vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_beans_fat_g",
+      "ingredient_key": "food_green_beans",
+      "preparation_id": "prep_green_beans",
+      "nutrient": "fat_g",
+      "value": 0.22,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Haricot vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_eggplant_energy_kcal",
+      "ingredient_key": "food_eggplant",
+      "preparation_id": "prep_eggplant",
+      "nutrient": "energy_kcal",
+      "value": 22.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Aubergine crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_eggplant_protein_g",
+      "ingredient_key": "food_eggplant",
+      "preparation_id": "prep_eggplant",
+      "nutrient": "protein_g",
+      "value": 0.98,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Aubergine crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_eggplant_carbohydrate_g",
+      "ingredient_key": "food_eggplant",
+      "preparation_id": "prep_eggplant",
+      "nutrient": "carbohydrate_g",
+      "value": 2.7,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Aubergine crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_eggplant_fat_g",
+      "ingredient_key": "food_eggplant",
+      "preparation_id": "prep_eggplant",
+      "nutrient": "fat_g",
+      "value": 0.18,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Aubergine crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cucumber_energy_kcal",
+      "ingredient_key": "food_cucumber",
+      "preparation_id": "prep_cucumber",
+      "nutrient": "energy_kcal",
+      "value": 16.8,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Concombre, chair et peau, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cucumber_protein_g",
+      "ingredient_key": "food_cucumber",
+      "preparation_id": "prep_cucumber",
+      "nutrient": "protein_g",
+      "value": 0.65,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Concombre, chair et peau, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cucumber_carbohydrate_g",
+      "ingredient_key": "food_cucumber",
+      "preparation_id": "prep_cucumber",
+      "nutrient": "carbohydrate_g",
+      "value": 2.87,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Concombre, chair et peau, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cucumber_fat_g",
+      "ingredient_key": "food_cucumber",
+      "preparation_id": "prep_cucumber",
+      "nutrient": "fat_g",
+      "value": 0.11,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Concombre, chair et peau, cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lettuce_energy_kcal",
+      "ingredient_key": "food_lettuce",
+      "preparation_id": "prep_lettuce",
+      "nutrient": "energy_kcal",
+      "value": 14.7,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Laitue crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lettuce_protein_g",
+      "ingredient_key": "food_lettuce",
+      "preparation_id": "prep_lettuce",
+      "nutrient": "protein_g",
+      "value": 1.35,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Laitue crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lettuce_carbohydrate_g",
+      "ingredient_key": "food_lettuce",
+      "preparation_id": "prep_lettuce",
+      "nutrient": "carbohydrate_g",
+      "value": 1.22,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Laitue crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lettuce_fat_g",
+      "ingredient_key": "food_lettuce",
+      "preparation_id": "prep_lettuce",
+      "nutrient": "fat_g",
+      "value": 0.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Laitue crue, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_pepper_energy_kcal",
+      "ingredient_key": "food_green_pepper",
+      "preparation_id": "prep_green_pepper",
+      "nutrient": "energy_kcal",
+      "value": 22.5,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poivron vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_pepper_protein_g",
+      "ingredient_key": "food_green_pepper",
+      "preparation_id": "prep_green_pepper",
+      "nutrient": "protein_g",
+      "value": 0.81,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poivron vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_pepper_carbohydrate_g",
+      "ingredient_key": "food_green_pepper",
+      "preparation_id": "prep_green_pepper",
+      "nutrient": "carbohydrate_g",
+      "value": 3.43,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poivron vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_green_pepper_fat_g",
+      "ingredient_key": "food_green_pepper",
+      "preparation_id": "prep_green_pepper",
+      "nutrient": "fat_g",
+      "value": 0.5,
+      "value_qualifier": "upper_bound",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Poivron vert cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_broccoli_energy_kcal",
+      "ingredient_key": "food_broccoli",
+      "preparation_id": "prep_broccoli",
+      "nutrient": "energy_kcal",
+      "value": 31.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Brocoli cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_broccoli_protein_g",
+      "ingredient_key": "food_broccoli",
+      "preparation_id": "prep_broccoli",
+      "nutrient": "protein_g",
+      "value": 2.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Brocoli cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_broccoli_carbohydrate_g",
+      "ingredient_key": "food_broccoli",
+      "preparation_id": "prep_broccoli",
+      "nutrient": "carbohydrate_g",
+      "value": 2.15,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Brocoli cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_broccoli_fat_g",
+      "ingredient_key": "food_broccoli",
+      "preparation_id": "prep_broccoli",
+      "nutrient": "fat_g",
+      "value": 0.36,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Brocoli cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cabbage_energy_kcal",
+      "ingredient_key": "food_cabbage",
+      "preparation_id": "prep_cabbage",
+      "nutrient": "energy_kcal",
+      "value": 35.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou blanc cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cabbage_protein_g",
+      "ingredient_key": "food_cabbage",
+      "preparation_id": "prep_cabbage",
+      "nutrient": "protein_g",
+      "value": 1.38,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou blanc cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cabbage_carbohydrate_g",
+      "ingredient_key": "food_cabbage",
+      "preparation_id": "prep_cabbage",
+      "nutrient": "carbohydrate_g",
+      "value": 4.63,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou blanc cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_cabbage_fat_g",
+      "ingredient_key": "food_cabbage",
+      "preparation_id": "prep_cabbage",
+      "nutrient": "fat_g",
+      "value": 0.6,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou blanc cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_pak_choi_energy_kcal",
+      "ingredient_key": "food_pak_choi",
+      "preparation_id": "prep_pak_choi",
+      "nutrient": "energy_kcal",
+      "value": 14.6,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou chinois pak choï cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_pak_choi_protein_g",
+      "ingredient_key": "food_pak_choi",
+      "preparation_id": "prep_pak_choi",
+      "nutrient": "protein_g",
+      "value": 1.5,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou chinois pak choï cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_pak_choi_carbohydrate_g",
+      "ingredient_key": "food_pak_choi",
+      "preparation_id": "prep_pak_choi",
+      "nutrient": "carbohydrate_g",
+      "value": 1.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou chinois pak choï cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_pak_choi_fat_g",
+      "ingredient_key": "food_pak_choi",
+      "preparation_id": "prep_pak_choi",
+      "nutrient": "fat_g",
+      "value": 0.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou chinois pak choï cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_kale_energy_kcal",
+      "ingredient_key": "food_kale",
+      "preparation_id": "prep_kale",
+      "nutrient": "energy_kcal",
+      "value": 34.6,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou kale cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_kale_protein_g",
+      "ingredient_key": "food_kale",
+      "preparation_id": "prep_kale",
+      "nutrient": "protein_g",
+      "value": 2.92,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou kale cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_kale_carbohydrate_g",
+      "ingredient_key": "food_kale",
+      "preparation_id": "prep_kale",
+      "nutrient": "carbohydrate_g",
+      "value": 0.32,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou kale cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_kale_fat_g",
+      "ingredient_key": "food_kale",
+      "preparation_id": "prep_kale",
+      "nutrient": "fat_g",
+      "value": 1.49,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Chou kale cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oyster_mushroom_energy_kcal",
+      "ingredient_key": "food_oyster_mushroom",
+      "preparation_id": "prep_oyster_mushroom",
+      "nutrient": "energy_kcal",
+      "value": 26.8,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Champignon, pleurote cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oyster_mushroom_protein_g",
+      "ingredient_key": "food_oyster_mushroom",
+      "preparation_id": "prep_oyster_mushroom",
+      "nutrient": "protein_g",
+      "value": 3.31,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Champignon, pleurote cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oyster_mushroom_carbohydrate_g",
+      "ingredient_key": "food_oyster_mushroom",
+      "preparation_id": "prep_oyster_mushroom",
+      "nutrient": "carbohydrate_g",
+      "value": 1.5,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Champignon, pleurote cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_oyster_mushroom_fat_g",
+      "ingredient_key": "food_oyster_mushroom",
+      "preparation_id": "prep_oyster_mushroom",
+      "nutrient": "fat_g",
+      "value": 0.41,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Champignon, pleurote cru, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_emmental_energy_kcal",
+      "ingredient_key": "food_emmental",
+      "preparation_id": "prep_emmental",
+      "nutrient": "energy_kcal",
+      "value": 373,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Emmental ou emmenthal, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_emmental_protein_g",
+      "ingredient_key": "food_emmental",
+      "preparation_id": "prep_emmental",
+      "nutrient": "protein_g",
+      "value": 27.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Emmental ou emmenthal, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_emmental_carbohydrate_g",
+      "ingredient_key": "food_emmental",
+      "preparation_id": "prep_emmental",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Emmental ou emmenthal, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_emmental_fat_g",
+      "ingredient_key": "food_emmental",
+      "preparation_id": "prep_emmental",
+      "nutrient": "fat_g",
+      "value": 28.8,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Emmental ou emmenthal, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_olive_oil_energy_kcal",
+      "ingredient_key": "food_olive_oil",
+      "preparation_id": "prep_olive_oil",
+      "nutrient": "energy_kcal",
+      "value": 899,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_olive_oil_protein_g",
+      "ingredient_key": "food_olive_oil",
+      "preparation_id": "prep_olive_oil",
+      "nutrient": "protein_g",
+      "value": 0.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_olive_oil_carbohydrate_g",
+      "ingredient_key": "food_olive_oil",
+      "preparation_id": "prep_olive_oil",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_olive_oil_fat_g",
+      "ingredient_key": "food_olive_oil",
+      "preparation_id": "prep_olive_oil",
+      "nutrient": "fat_g",
+      "value": 99.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_garlic_oil_energy_kcal",
+      "ingredient_key": "food_garlic_oil",
+      "preparation_id": "prep_garlic_oil",
+      "nutrient": "energy_kcal",
+      "value": 899,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive (proxy nutritionnel pour l’huile filtrée), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_garlic_oil_protein_g",
+      "ingredient_key": "food_garlic_oil",
+      "preparation_id": "prep_garlic_oil",
+      "nutrient": "protein_g",
+      "value": 0.2,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive (proxy nutritionnel pour l’huile filtrée), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_garlic_oil_carbohydrate_g",
+      "ingredient_key": "food_garlic_oil",
+      "preparation_id": "prep_garlic_oil",
+      "nutrient": "carbohydrate_g",
+      "value": 0,
+      "value_qualifier": "trace",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive (proxy nutritionnel pour l’huile filtrée), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_garlic_oil_fat_g",
+      "ingredient_key": "food_garlic_oil",
+      "preparation_id": "prep_garlic_oil",
+      "nutrient": "fat_g",
+      "value": 99.9,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Huile d’olive (proxy nutritionnel pour l’huile filtrée), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lemon_energy_kcal",
+      "ingredient_key": "food_lemon",
+      "preparation_id": "prep_lemon",
+      "nutrient": "energy_kcal",
+      "value": 24.3,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Citron, chair sans peau et pépins, cru (valeur de référence), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lemon_protein_g",
+      "ingredient_key": "food_lemon",
+      "preparation_id": "prep_lemon",
+      "nutrient": "protein_g",
+      "value": 0.25,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Citron, chair sans peau et pépins, cru (valeur de référence), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lemon_carbohydrate_g",
+      "ingredient_key": "food_lemon",
+      "preparation_id": "prep_lemon",
+      "nutrient": "carbohydrate_g",
+      "value": 1.56,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Citron, chair sans peau et pépins, cru (valeur de référence), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_lemon_fat_g",
+      "ingredient_key": "food_lemon",
+      "preparation_id": "prep_lemon",
+      "nutrient": "fat_g",
+      "value": 0.5,
+      "value_qualifier": "upper_bound",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_mymmealmaker",
+      "citation_locator": "Ciqual 2025 miroir, Citron, chair sans peau et pépins, cru (valeur de référence), pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_butter_energy_kcal",
+      "ingredient_key": "food_butter",
+      "preparation_id": "prep_butter",
+      "nutrient": "energy_kcal",
+      "value": 753,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Beurre, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_butter_protein_g",
+      "ingredient_key": "food_butter",
+      "preparation_id": "prep_butter",
+      "nutrient": "protein_g",
+      "value": 0.6,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Beurre, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_butter_carbohydrate_g",
+      "ingredient_key": "food_butter",
+      "preparation_id": "prep_butter",
+      "nutrient": "carbohydrate_g",
+      "value": 0.7,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Beurre, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    },
+    {
+      "nutrient_value_id": "nutr_butter_fat_g",
+      "ingredient_key": "food_butter",
+      "preparation_id": "prep_butter",
+      "nutrient": "fat_g",
+      "value": 83,
+      "value_qualifier": "exact",
+      "reference_amount_g": 100,
+      "source_key": "ciqual_2025_davidcosta",
+      "citation_locator": "Ciqual 2025 miroir, Beurre, pour 100 g",
+      "review_status": "verified",
+      "record_status": "published"
+    }
+  ],
+  "fodmap_portion_assessments": []
+}

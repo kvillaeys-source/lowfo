@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "LOWFO — Mon carnet",
+  "short_name": "LOWFO",
+  "description": "Un carnet alimentaire Low FODMAP privé, enregistré sur cet appareil.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#f5efe6",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

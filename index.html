@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f5efe6">
+    <meta name="description" content="Un carnet alimentaire Low FODMAP privé, enregistré sur cet appareil.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <title>LOWFO — Mon carnet</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header">
+      <a class="brand" href="#accueil" aria-label="LOWFO, accueil" data-view-link="home">
+        <img src="./icon.svg" alt="" width="40" height="40">
+        <span>LOWFO</span>
+      </a>
+      <p class="privacy-chip"><span class="privacy-dot" aria-hidden="true"></span> Enregistré sur cet appareil</p>
+    </header>
+
+    <div id="offlineNotice" class="offline-notice" role="status" hidden>
+      Vous êtes hors ligne. Le carnet reste accessible sur cet appareil.
+    </div>
+
+    <nav class="main-nav" aria-label="Navigation principale" role="tablist">
+      <button type="button" role="tab" aria-selected="true" aria-controls="view-home" data-view-button="home">Accueil</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-recipes" data-view-button="recipes">Recettes</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-menu" data-view-button="menu">Menu</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-shopping" data-view-button="shopping">Courses</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-entry" data-view-button="entry">Ajouter</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-journal" data-view-button="journal">Journal</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-digestive" data-view-button="digestive">Suivi digestif</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-phases" data-view-button="phases">Les phases</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="view-backup" data-view-button="backup">Sauvegarde</button>
+    </nav>
+
+    <main id="main" class="page-shell">
+      <p id="appNotice" class="app-notice" role="status" aria-live="polite" hidden></p>
+
+      <section id="view-home" class="view" role="tabpanel" aria-labelledby="tab-home" tabindex="-1">
+        <div class="welcome-block">
+          <p class="eyebrow">Votre carnet, à votre rythme</p>
+          <h1>Bonjour <span aria-hidden="true">☀️</span></h1>
+          <p class="intro-copy">Notez vos repas et vos ressentis, puis rapprochez les symptômes des repas précédents dans le suivi digestif. Vos entrées restent dans le navigateur de cet appareil.</p>
+        </div>
+
+        <div class="summary-grid" aria-label="Résumé de votre journal">
+          <article class="summary-card">
+            <span class="summary-label">Entrées dans le carnet</span>
+            <strong id="entryCount" class="summary-value">—</strong>
+          </article>
+          <article class="summary-card summary-card-warm">
+            <span class="summary-label">Dernière entrée</span>
+            <strong id="latestEntry" class="summary-value summary-date">Aucune pour le moment</strong>
+          </article>
+        </div>
+
+        <div class="action-row">
+          <button type="button" class="button button-primary" data-view-link="entry">Ajouter un repas</button>
+          <button type="button" class="button button-secondary" data-view-link="entry" data-entry-kind="symptom">Noter un ressenti</button>
+          <button type="button" class="button button-secondary" data-view-link="journal">Consulter le journal</button>
+        </div>
+
+        <section class="home-section" aria-labelledby="recent-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Votre historique</p>
+              <h2 id="recent-heading">Entrées récentes</h2>
+            </div>
+            <button type="button" class="text-button" data-view-link="journal">Tout voir</button>
+          </div>
+          <div id="recentEntries" class="entry-list" aria-live="polite"></div>
+        </section>
+
+        <aside class="soft-note">
+          <span class="note-icon" aria-hidden="true">✳</span>
+          <div>
+            <strong>Un espace personnel</strong>
+            <p id="backupReminder">Le stockage du navigateur peut être effacé. Pensez à exporter régulièrement une sauvegarde chiffrée.</p>
+          </div>
+          <button type="button" class="text-button note-action" data-view-link="backup">Sauvegarder</button>
+        </aside>
+        <p class="catalog-note">La bibliothèque contient désormais 50 recettes : 5 petits-déjeuners, 22 déjeuners et 23 dîners. Vos entrées personnelles restent saisies librement dans votre journal local.</p>
+      </section>
+
+      <section id="view-recipes" class="view" role="tabpanel" aria-labelledby="tab-recipes" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Bibliothèque</p>
+          <h1>Recettes</h1>
+          <p class="intro-copy">50 repas conçus à partir d’ingrédients et de portions décrits dans les ressources publiques Low FODMAP citées. Chaque fiche affiche ses ingrédients, sa préparation, ses macros estimées et le détail de ses sources.</p>
+          <p class="disclaimer">Pré-sélection documentaire basée sur les ressources publiques Monash, sans consultation de la base complète de l’application et sans certification. Les portions publiques ne sont pas détaillées pour tous les aliments; ouvrez la section des sources de chaque fiche.</p>
+          <p id="recipeCount" class="field-hint">Aucune recette publiée pour le moment.</p>
+        </div>
+        <div id="recipeEmptyState" class="recipe-empty">
+          <span class="recipe-empty-mark" aria-hidden="true">✳</span>
+          <h2>La bibliothèque ne peut pas être chargée</h2>
+          <p>Les recettes ne sont pas disponibles pour le moment. Rechargez la page lorsque les fichiers de la bibliothèque seront accessibles.</p>
+        </div>
+        <div id="recipeList" class="recipe-list" aria-live="polite" hidden></div>
+      </section>
+
+      <section id="view-menu" class="view" role="tabpanel" aria-labelledby="tab-menu" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Planification de la semaine</p>
+          <h1>Menu intelligent</h1>
+          <p class="intro-copy">Le menu est composé à partir des recettes disponibles pour les repas choisis. Les ingrédients des recettes retenues peuvent ensuite être ajoutés à la liste de courses.</p>
+        </div>
+        <section class="panel nutrition-profile" aria-labelledby="nutrition-profile-heading">
+          <h2 id="nutrition-profile-heading">Mes repères nutritionnels estimés</h2>
+          <p class="field-hint">Estimation d’entretien pour les adultes de 19 à 78 ans, à partir de la taille, du poids, de l’âge, du coefficient de l’équation et d’un niveau d’activité. Le calcul énergétique combine Mifflin–St Jeor et un PAL choisi : c’est une approximation, pas l’estimation officielle d’un besoin individuel. Les macros sont des repères EFSA généraux. Les données restent sur cet appareil et peuvent être effacées ici.</p>
+          <form id="nutritionProfileForm" class="nutrition-profile-form">
+            <div>
+              <label class="field-label" for="profileAge">Âge (années)</label>
+              <input id="profileAge" class="text-input" type="number" min="19" max="78" step="1" required>
+            </div>
+            <div>
+              <label class="field-label" for="profileHeight">Taille (cm)</label>
+              <input id="profileHeight" class="text-input" type="number" min="120" max="230" step="0.1" required>
+            </div>
+            <div>
+              <label class="field-label" for="profileWeight">Poids (kg)</label>
+              <input id="profileWeight" class="text-input" type="number" min="30" max="300" step="0.1" required>
+            </div>
+            <div>
+              <label class="field-label" for="profileSexCoefficient">Coefficient de l’équation</label>
+              <select id="profileSexCoefficient" class="text-input" required>
+                <option value="">Choisir…</option>
+                <option value="female">Féminin</option>
+                <option value="male">Masculin</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="profileActivity">Activité habituelle</label>
+              <select id="profileActivity" class="text-input" required>
+                <option value="1.4">Faible (PAL 1,4)</option>
+                <option value="1.6" selected>Modérée (PAL 1,6)</option>
+                <option value="1.8">Élevée (PAL 1,8)</option>
+              </select>
+            </div>
+            <div class="nutrition-profile-actions">
+              <button class="button button-primary" type="submit">Calculer mes repères</button>
+              <button id="clearNutritionProfile" class="button button-secondary" type="button">Effacer mon profil</button>
+            </div>
+          </form>
+          <div id="nutritionTargets" class="nutrition-targets" aria-live="polite" hidden></div>
+          <p class="disclaimer">Il s’agit d’estimations générales, pas d’une prescription ni d’un objectif de perte ou de prise de poids. Le coefficient féminin/masculin désigne le paramètre de l’équation, pas une définition de l’identité. Elles ne sont pas adaptées à la grossesse, à l’allaitement, aux moins de 19 ans ni à certaines situations de santé. Un professionnel peut les ajuster.</p>
+          <p class="field-hint">Sources de calcul : <a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noopener noreferrer">équation Mifflin–St Jeor</a>, <a href="https://onlinelibrary.wiley.com/doi/10.2903/j.efsa.2013.3005" target="_blank" rel="noopener noreferrer">repères EFSA d’énergie et d’activité</a>, <a href="https://www.efsa.europa.eu/sites/default/files/2017_09_DRVs_summary_report.pdf" target="_blank" rel="noopener noreferrer">plages EFSA de glucides et lipides</a>, <a href="https://www.efsa.europa.eu/en/press/news/120209" target="_blank" rel="noopener noreferrer">PRI EFSA pour les protéines</a>.</p>
+        </section>
+        <section class="panel menu-controls" aria-labelledby="menu-options-heading">
+          <h2 id="menu-options-heading">Organiser ma semaine</h2>
+          <div class="menu-option-grid">
+            <div>
+              <label class="field-label" for="menuWeekOf">Semaine du</label>
+              <input id="menuWeekOf" class="text-input" type="date">
+            </div>
+            <div>
+              <label class="field-label" for="mealsPerDay">Repas par jour</label>
+              <select id="mealsPerDay" class="text-input">
+                <option value="1">1 repas — dîner</option>
+                <option value="2" selected>2 repas — déjeuner et dîner</option>
+                <option value="3">3 repas — petit-déjeuner, déjeuner et dîner</option>
+              </select>
+            </div>
+          </div>
+          <p id="menuAvailability" class="field-hint">La bibliothèque comprend des petits-déjeuners, déjeuners et dîners documentés. Choisissez les repas de votre semaine pour générer un menu.</p>
+          <div class="menu-action-row">
+            <button id="generateMenu" class="button button-primary" type="button" aria-describedby="menuAvailability" disabled>Générer ma semaine</button>
+            <button id="syncMenuShopping" class="button button-secondary" type="button" aria-describedby="menuAvailability" disabled>Synchroniser avec les courses</button>
+          </div>
+        </section>
+        <div id="menuWeekGrid" class="menu-week-grid" aria-live="polite"></div>
+        <aside class="soft-note menu-sync-note">
+          <span class="note-icon" aria-hidden="true">↔</span>
+          <div>
+            <strong>Menu et liste de courses liés</strong>
+            <p>La synchronisation remplace les articles générés par un menu précédent. Les articles ajoutés manuellement sont conservés.</p>
+          </div>
+          <button type="button" class="text-button note-action" data-view-link="shopping">Voir les courses</button>
+        </aside>
+        <p class="disclaimer">Avec trois repas planifiés et un profil enregistré, le générateur compare les sommes nutritionnelles estimées des recettes aux repères quotidiens pour sélectionner une combinaison proche. Un ou deux repas ne couvrent qu’une partie de la journée. Les valeurs nutritionnelles sont calculées séparément des évaluations FODMAP et ne remplacent pas un conseil professionnel.</p>
+      </section>
+
+      <section id="view-shopping" class="view" role="tabpanel" aria-labelledby="tab-shopping" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">À garder sous la main</p>
+          <h1>Liste de courses</h1>
+          <p class="intro-copy">Cette liste est enregistrée sur cet appareil. Les articles cochés restent visibles jusqu’à leur suppression.</p>
+        </div>
+        <form id="shoppingForm" class="panel shopping-form">
+          <label class="field-label" for="shoppingName">Article</label>
+          <input id="shoppingName" name="name" class="text-input" type="text" maxlength="120" required placeholder="Ajouter un article à la liste">
+          <label class="field-label" for="shoppingQuantity">Quantité (facultatif)</label>
+          <input id="shoppingQuantity" name="quantity" class="text-input" type="text" maxlength="80" placeholder="Ex. : 2 unités">
+          <button class="button button-primary" type="submit">Ajouter à la liste</button>
+        </form>
+        <div class="shopping-list-heading">
+          <h2>À acheter</h2>
+          <span id="shoppingCount" class="shopping-count">0 article</span>
+        </div>
+        <div id="shoppingItems" class="shopping-items" aria-live="polite"></div>
+      </section>
+
+      <section id="view-entry" class="view" role="tabpanel" aria-labelledby="tab-entry" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Journal personnel</p>
+          <h1>Ajouter une entrée</h1>
+          <p class="intro-copy">Choisissez un repas ou un ressenti digestif. Pour un ressenti, vous pourrez sélectionner les repas récents à comparer.</p>
+        </div>
+
+        <form id="entryForm" class="panel form-panel">
+          <fieldset class="field-group">
+            <legend>Type d’entrée</legend>
+            <div class="choice-row">
+              <label class="choice-card">
+                <input type="radio" name="entryKind" value="meal" checked>
+                <span class="choice-icon" aria-hidden="true">🍽</span>
+                <span><strong>Repas</strong><small>Aliments ou plat</small></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="entryKind" value="symptom">
+                <span class="choice-icon" aria-hidden="true">◌</span>
+                <span><strong>Ressenti</strong><small>Symptôme observé</small></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field-label" for="occurredAt">Date et heure</label>
+          <input id="occurredAt" name="occurredAt" class="text-input" type="datetime-local" required>
+
+          <div id="mealFields" class="conditional-fields">
+            <label class="field-label" for="mealDescription">Repas ou aliments</label>
+            <textarea id="mealDescription" name="mealDescription" class="text-input" rows="3" maxlength="500" placeholder="Saisissez les aliments ou le plat" required></textarea>
+            <label class="field-label" for="mealAmount">Quantité (facultatif)</label>
+            <input id="mealAmount" name="mealAmount" class="text-input" type="text" maxlength="100" placeholder="Ex. : une petite portion">
+          </div>
+
+          <div id="symptomFields" class="conditional-fields" hidden>
+            <label class="field-label" for="symptomCode">Ressenti observé</label>
+            <select id="symptomCode" name="symptomCode" class="text-input" disabled>
+              <option value="abdominal_pain">Douleur abdominale</option>
+              <option value="bloating">Ballonnements</option>
+              <option value="gas">Gaz</option>
+              <option value="diarrhoea">Diarrhée</option>
+              <option value="constipation">Constipation</option>
+              <option value="nausea">Nausées</option>
+              <option value="urgency">Urgence intestinale</option>
+              <option value="other">Autre ressenti</option>
+            </select>
+            <label class="field-label" for="intensity">Intensité ressentie (facultatif)</label>
+            <div class="range-row">
+              <input id="intensity" name="intensity" type="range" min="0" max="10" step="1" value="0" disabled aria-describedby="intensityHint">
+              <output id="intensityValue" for="intensity">0</output>
+            </div>
+            <p id="intensityHint" class="field-hint">Échelle personnelle de 0 à 10. Laissez la valeur à 0 pour ne pas indiquer d’intensité.</p>
+            <fieldset class="field-group related-meals-group">
+              <legend>Repas précédents à rapprocher (facultatif)</legend>
+              <div id="relatedMealChoices" class="meal-associations" aria-live="polite"></div>
+              <p class="field-hint">Les repas enregistrés dans les 72 heures précédant cette observation s’affichent ici. Le délai aide à comparer vos notes, sans prouver un lien de cause à effet.</p>
+            </fieldset>
+          </div>
+
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Enregistrer l’entrée</button>
+            <p class="field-hint">Les entrées ne sont transmises à aucun compte ou serveur.</p>
+          </div>
+        </form>
+      </section>
+
+      <section id="view-journal" class="view" role="tabpanel" aria-labelledby="tab-journal" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Historique local</p>
+          <h1>Mon journal</h1>
+          <p class="intro-copy">Repas et ressentis sont affichés par date. Pour comparer les horaires et les repas associés, ouvrez le suivi digestif.</p>
+        </div>
+        <div class="action-row journal-actions">
+          <button type="button" class="button button-primary" data-view-link="entry" data-entry-kind="symptom">Noter un ressenti digestif</button>
+          <button type="button" class="button button-secondary" data-view-link="digestive">Voir le suivi digestif</button>
+        </div>
+        <div class="filter-row" aria-label="Filtrer les entrées">
+          <button type="button" class="filter-button is-active" aria-pressed="true" data-filter="all">Tout</button>
+          <button type="button" class="filter-button" aria-pressed="false" data-filter="meal">Repas</button>
+          <button type="button" class="filter-button" aria-pressed="false" data-filter="symptom">Ressentis</button>
+        </div>
+        <div id="journalEntries" class="entry-list journal-list" aria-live="polite"></div>
+      </section>
+
+      <section id="view-digestive" class="view" role="tabpanel" aria-labelledby="tab-digestive" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Repas et ressentis</p>
+          <h1>Suivi digestif</h1>
+          <p class="intro-copy">Notez quand un symptôme apparaît, puis rapprochez-le des repas précédents enregistrés. LOWFO calcule le délai pour faciliter votre observation, sans conclure qu’un repas en est la cause.</p>
+        </div>
+        <div class="action-row digestive-actions">
+          <button type="button" class="button button-primary" data-view-link="entry" data-entry-kind="symptom">Noter un ressenti digestif</button>
+          <button type="button" class="button button-secondary" data-view-link="entry" data-entry-kind="meal">Ajouter un repas</button>
+        </div>
+        <section class="home-section" aria-labelledby="digestive-history-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Historique des observations</p>
+              <h2 id="digestive-history-heading">Ressentis digestifs</h2>
+            </div>
+          </div>
+          <div id="digestiveEntries" class="entry-list journal-list" aria-live="polite"></div>
+        </section>
+        <p class="disclaimer">Le journal sert à consigner vos observations personnelles; il n’établit pas de diagnostic ni de lien médical entre un repas et un symptôme.</p>
+      </section>
+
+      <section id="view-phases" class="view" role="tabpanel" aria-labelledby="tab-phases" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Quelques repères</p>
+          <h1>Les trois phases</h1>
+          <p class="intro-copy">Le parcours Low FODMAP est souvent présenté en trois phases. Cette page donne des repères généraux.</p>
+        </div>
+        <div class="phase-list">
+          <article class="phase-card">
+            <span class="phase-number">01</span>
+            <div><h2>Élimination</h2><p>Une phase de repérage avec une alimentation adaptée au cadre Low FODMAP.</p></div>
+          </article>
+          <article class="phase-card phase-card-terra">
+            <span class="phase-number">02</span>
+            <div><h2>Réintroduction</h2><p>Une phase d’observation structurée autour de familles d’aliments et de portions définies.</p></div>
+          </article>
+          <article class="phase-card phase-card-sage">
+            <span class="phase-number">03</span>
+            <div><h2>Personnalisation</h2><p>Une phase où les observations servent à construire une alimentation personnalisée.</p></div>
+          </article>
+        </div>
+        <p class="disclaimer">Ces repères sont informatifs. LOWFO ne pose pas de diagnostic et ne fournit pas de recommandation médicale automatisée.</p>
+      </section>
+
+      <section id="view-backup" class="view" role="tabpanel" aria-labelledby="tab-backup" tabindex="-1" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Vos données restent avec vous</p>
+          <h1>Sauvegarde</h1>
+          <p class="intro-copy">Le journal, la liste de courses et les menus hebdomadaires sont conservés dans le navigateur de cet appareil. Une sauvegarde exportée vous aide à les récupérer si le stockage local est perdu.</p>
+        </div>
+        <section class="panel backup-panel" aria-labelledby="backup-export-heading">
+          <div class="backup-heading-icon" aria-hidden="true">↗</div>
+          <div class="backup-copy">
+            <h2 id="backup-export-heading">Exporter une sauvegarde chiffrée</h2>
+            <p>Choisissez puis confirmez une phrase secrète d’au moins 12 caractères. Elle chiffre le fichier sur cet appareil. LOWFO ne la connaît pas et ne peut pas la récupérer.</p>
+            <label class="field-label" for="backupPassphrase">Phrase secrète</label>
+            <input id="backupPassphrase" class="text-input" type="password" minlength="12" maxlength="256" required autocomplete="new-password" spellcheck="false" placeholder="12 caractères minimum">
+            <label class="field-label" for="backupPassphraseConfirm">Confirmer la phrase secrète</label>
+            <input id="backupPassphraseConfirm" class="text-input" type="password" minlength="12" maxlength="256" required autocomplete="new-password" spellcheck="false">
+            <button id="exportBackup" class="button button-primary" type="button">Exporter le fichier chiffré</button>
+            <p id="lastBackup" class="field-hint">Aucune sauvegarde exportée depuis ce navigateur.</p>
+          </div>
+        </section>
+
+        <section class="panel backup-panel restore-panel" aria-labelledby="backup-restore-heading">
+          <div class="backup-heading-icon restore-icon" aria-hidden="true">↙</div>
+          <div class="backup-copy">
+            <h2 id="backup-restore-heading">Restaurer une sauvegarde</h2>
+            <p>La restauration ajoute les entrées et articles absents. Les éléments déjà présents restent en place.</p>
+            <label class="field-label" for="restoreFile">Fichier LOWFO chiffré</label>
+            <input id="restoreFile" class="text-input file-input" type="file" accept=".lowfo,application/json">
+            <label class="field-label" for="restorePassphrase">Phrase secrète de cette sauvegarde</label>
+            <input id="restorePassphrase" class="text-input" type="password" maxlength="256" autocomplete="current-password" spellcheck="false">
+            <button id="restoreBackup" class="button button-secondary" type="button">Déchiffrer et restaurer</button>
+          </div>
+        </section>
+        <aside class="backup-warning"><strong>Copie dans le cloud</strong><p>Si vous placez le fichier exporté dans iCloud, Google Drive ou un autre service, cette sauvegarde devient une copie dans le cloud. Choisissez son emplacement en connaissance de cause.</p></aside>
+        <p class="disclaimer">La protection par phrase secrète s’applique au fichier exporté. Les données actives restent dans le stockage local du navigateur et peuvent être effacées par le système ou par la suppression des données de navigation.</p>
+      </section>
+
+      <footer class="site-footer">
+        <span>LOWFO</span>
+        <span>Un carnet personnel, sans compte ni synchronisation.</span>
+      </footer>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
