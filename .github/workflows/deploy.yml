@@ -1,0 +1,44 @@
+name: Publier LOWFO sur GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v6
+
+      - name: Préparer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Préparer les fichiers publics de LOWFO
+        run: |
+          mkdir dist
+          cp index.html styles.css app.js recipes.json food_catalog.json manifest.webmanifest sw.js icon.svg dist/
+          touch dist/.nojekyll
+
+      - name: Charger le site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Publier le site
+        id: deployment
+        uses: actions/deploy-pages@v4
