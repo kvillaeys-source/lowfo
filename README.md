@@ -8,7 +8,7 @@ La PWA doit être servie depuis `localhost` ou une origine HTTPS. Depuis ce doss
 
 ## Hébergement et installation mobile
 
-La configuration `.github/workflows/deploy.yml` prépare une publication statique sur GitHub Pages après un push sur `main` (ou un lancement manuel du workflow). Elle ne publie que les fichiers nécessaires à l’application. Dans GitHub, il faudra choisir **Settings → Pages → Build and deployment → GitHub Actions**. Le dépôt cible et la publication restent à configurer; aucun dépôt n’a été créé et aucun site n’a été publié.
+La configuration `.github/workflows/deploy.yml` publie automatiquement l’application statique sur GitHub Pages après un push sur `main` (ou un lancement manuel du workflow). Elle ne publie que les fichiers nécessaires à l’application. Pages est activé avec la source **GitHub Actions**. Adresse publiée : https://kvillaeys-source.github.io/lowfo/.
 
 Sur GitHub Free, GitHub Pages nécessite un dépôt public. Le site publié est accessible publiquement, même si le dépôt est privé sur une formule qui l’autorise. Le code de LOWFO et les recettes sont destinés à être publics; le journal, le profil, les symptômes et la liste de courses restent dans IndexedDB sur l’appareil et ne sont pas copiés vers GitHub. GitHub consigne les adresses IP des visiteurs pour la sécurité. GitHub Pages convient à ce site statique personnel, pas à un service SaaS ou à des transactions sensibles; voir les [limites GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
 
@@ -40,4 +40,4 @@ Les macros sont calculées séparément des repères FODMAP à partir des donné
 - Une sauvegarde chiffrée exportée par l’utilisateur comprend le journal, le profil, les menus et les courses. L’application ne l’envoie pas automatiquement vers le cloud.
 - Le profil nutritionnel reste modifiable et effaçable depuis le menu.
 
-Les anciennes fiches de travail sont signalées comme remplacées par `recipes.json`; elles ne sont pas chargées par l’application. Le workflow de publication est préparé, mais aucun dépôt distant n’a été relié et aucun déploiement public n’a été effectué.
+Les anciennes fiches de travail sont signalées comme remplacées par `recipes.json`; elles ne sont pas chargées par l’application. La PWA est publiée sur https://kvillaeys-source.github.io/lowfo/.
