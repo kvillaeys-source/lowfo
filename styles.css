@@ -233,6 +233,10 @@ textarea.text-input { min-height: 90px; resize: vertical; }
 .menu-slot-label { display: block; color: var(--terracotta-dark); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .menu-slot-empty { display: block; margin-top: 0.1rem; color: var(--muted); font-size: 0.84rem; }
 .menu-slot-recipe { display: block; margin-top: 0.1rem; color: var(--ink); font-size: 0.9rem; font-weight: 750; }
+.menu-slot-recipe-details { margin-top: 0.4rem; }
+.menu-slot-recipe-details > summary { color: var(--terracotta-dark); cursor: pointer; font-size: 0.82rem; font-weight: 700; }
+.menu-slot-recipe-details .recipe-card { margin-top: 0.5rem; }
+.menu-slot-recipe-details .recipe-card h2 { font-size: 1.15rem; }
 .menu-nutrition-summary { margin-top: 0.55rem; padding: 0.65rem 0.75rem; border-radius: 0.65rem; background: #edf0e9; color: var(--ink); font-size: 0.82rem; }
 .menu-nutrition-summary summary { cursor: pointer; font-weight: 750; }
 .menu-nutrition-summary p { margin: 0.4rem 0 0; }
