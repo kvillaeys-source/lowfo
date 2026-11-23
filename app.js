@@ -539,6 +539,88 @@ async function loadNutritionProfile() {
   renderNutritionProfile();
 }
 
+function createRecipeCard(recipe) {
+  const card = document.createElement("article");
+  card.className = "recipe-card";
+  card.append(textElement("h2", "", recipe.name_fr));
+  const sourceLine = textElement("p", "recipe-meta", `${recipe.servings} portion${recipe.servings > 1 ? "s" : ""} · Source${recipe.source_keys.length > 1 ? "s" : ""} : `);
+  recipe.source_keys.forEach((sourceKey, index) => {
+    if (index) sourceLine.append(document.createTextNode(" · "));
+    appendCitationLink(sourceLine, sourceKey, recipe.citation_locator);
+  });
+  card.append(sourceLine);
+  const nutrition = calculateRecipeNutrition(recipe);
+  const nutrientText = (kind, unit) => (nutrition.upperBounds[kind] ? "≤" : "") + formatNutrient(nutrition[kind], unit);
+  card.append(textElement("p", "recipe-meta", "Estimation par portion · " + nutrientText("energy_kcal", "kcal") + " · protéines " + nutrientText("protein_g", "g") + " · glucides " + nutrientText("carbohydrate_g", "g") + " · lipides " + nutrientText("fat_g", "g")));
+  const ingredients = document.createElement("ul");
+  ingredients.className = "recipe-ingredients";
+  recipe.ingredients.forEach(ingredient => {
+    const food = getCatalogIngredient(ingredient);
+    ingredients.append(textElement("li", "", `${ingredient.quantity_label_fr} — ${food.name_fr}`));
+  });
+  card.append(ingredients);
+  if (recipe.seasoning_note_fr) card.append(textElement("p", "recipe-meta", recipe.seasoning_note_fr));
+  const details = document.createElement("details");
+  details.append(textElement("summary", "", "Préparation"));
+  const steps = document.createElement("ol");
+  recipe.instructions_fr.forEach(step => steps.append(textElement("li", "", step)));
+  details.append(steps);
+  card.append(details);
+  const evidence = document.createElement("details");
+  evidence.className = "recipe-evidence";
+  evidence.append(textElement("summary", "", "Voir la vérification Low FODMAP et les sources"));
+  const reviewLine = textElement("p", "recipe-meta", `Revue de la recette entière : ${recipe.fodmap_reviewer_role}, ${formatDate(recipe.fodmap_reviewed_at, false)} · `);
+  recipe.fodmap_review_source_keys.forEach((sourceKey, index) => {
+    if (index) reviewLine.append(document.createTextNode(" · "));
+    appendCitationLink(reviewLine, sourceKey, recipe.fodmap_review_citation_locator);
+  });
+  evidence.append(reviewLine);
+  if ((recipe.fodmap_review_basis || "ingredient_measurements") === "public_sources") {
+    evidence.append(textElement("p", "recipe-meta", recipe.fodmap_scope_notice_fr || "Contrôle documentaire fondé sur les ressources publiques citées; ce n’est pas une certification."));
+  } else if ((recipe.fodmap_review_basis || "ingredient_measurements") === "external_food_guide") {
+    evidence.append(textElement("p", "recipe-meta", "Pour la phase de restriction : chaque ingrédient, sa préparation et sa portion par personne ont été vérifiés par la personne indiquée auprès du guide alimentaire cité. LOWFO conserve la revue et sa référence, sans recopier les mesures ni les fiches de cette base. Cette vérification n’est pas une certification Monash."));
+  }
+  const evidenceList = document.createElement("ul");
+  for (const ingredient of recipe.ingredients) {
+    const food = getCatalogIngredient(ingredient);
+    const item = document.createElement("li");
+    item.append(textElement("p", "", `${food.name_fr} — portion recette : ${formatNutrient(ingredient.amount_g_per_serving, "g/personne")}`));
+    if ((recipe.fodmap_review_basis || "ingredient_measurements") === "public_sources") {
+      item.append(textElement("p", "recipe-meta", ingredient.fodmap_evidence_fr || "Ingrédient contrôlé à partir des ressources publiques citées."));
+    } else if ((recipe.fodmap_review_basis || "ingredient_measurements") === "external_food_guide") {
+      item.append(textElement("p", "recipe-meta", "Préparation et portion incluses dans la revue de la recette entière."));
+    } else {
+      const assessmentList = document.createElement("ul");
+      const assessments = ingredient.fodmap_assessment_ids.map(id => catalogIndexes.fodmapAssessments.get(id));
+      for (const family of fodmapFamilies) {
+        const assessment = assessments.find(row => row.family === family);
+        const row = document.createElement("li");
+        const status = assessment.assessment_status === "low" ? "bas" : "non détecté";
+        row.append(document.createTextNode(`${fodmapFamilyLabels[family]} : ${status} à ${formatNutrient(assessment.tested_portion_g, "g")} · `));
+        appendCitationLink(row, assessment.source_key, assessment.citation_locator);
+        assessmentList.append(row);
+      }
+      item.append(assessmentList);
+    }
+    const nutrientList = document.createElement("ul");
+    for (const valueId of ingredient.nutrient_value_ids) {
+      const value = catalogIndexes.nutrientValues.get(valueId);
+      const row = document.createElement("li");
+      const unit = value.nutrient === "energy_kcal" ? "kcal" : "g";
+      const displayedValue = value.value_qualifier === "trace" ? "traces" : (value.value_qualifier === "upper_bound" ? "≤" : "") + formatNutrient(value.value, unit);
+      row.append(document.createTextNode(nutrientLabels[value.nutrient] + " : " + displayedValue + " / " + formatNutrient(value.reference_amount_g, "g") + " · "));
+      appendCitationLink(row, value.source_key, value.citation_locator);
+      nutrientList.append(row);
+    }
+    item.append(textElement("p", "recipe-meta", "Données nutritionnelles de référence"), nutrientList);
+    evidenceList.append(item);
+  }
+  evidence.append(evidenceList);
+  evidence.append(textElement("p", "recipe-meta", "Nutrition estimée à partir de Ciqual 2025. Quand Ciqual publie une valeur « < x », la borne x est conservée et affichée avec ≤; les traces ne sont pas ajoutées au total. Les macros restent des estimations."));
+  card.append(evidence);
+  return card;
+}
+
 function renderRecipeLibrary() {
   const emptyState = $("#recipeEmptyState");
   const list = $("#recipeList");
@@ -548,87 +630,8 @@ function renderRecipeLibrary() {
   emptyState.hidden = recipeLibrary.length > 0;
   list.hidden = recipeLibrary.length === 0;
   list.replaceChildren();
-  for (const recipe of recipeLibrary) {
-    const card = document.createElement("article");
-    card.className = "recipe-card";
-    card.append(textElement("h2", "", recipe.name_fr));
-    const sourceLine = textElement("p", "recipe-meta", `${recipe.servings} portion${recipe.servings > 1 ? "s" : ""} · Source${recipe.source_keys.length > 1 ? "s" : ""} : `);
-    recipe.source_keys.forEach((sourceKey, index) => {
-      if (index) sourceLine.append(document.createTextNode(" · "));
-      appendCitationLink(sourceLine, sourceKey, recipe.citation_locator);
-    });
-    card.append(sourceLine);
-    const nutrition = calculateRecipeNutrition(recipe);
-    const nutrientText = (kind, unit) => (nutrition.upperBounds[kind] ? "≤" : "") + formatNutrient(nutrition[kind], unit);
-    card.append(textElement("p", "recipe-meta", "Estimation par portion · " + nutrientText("energy_kcal", "kcal") + " · protéines " + nutrientText("protein_g", "g") + " · glucides " + nutrientText("carbohydrate_g", "g") + " · lipides " + nutrientText("fat_g", "g")));
-    const ingredients = document.createElement("ul");
-    ingredients.className = "recipe-ingredients";
-    recipe.ingredients.forEach(ingredient => {
-      const food = getCatalogIngredient(ingredient);
-      ingredients.append(textElement("li", "", `${ingredient.quantity_label_fr} — ${food.name_fr}`));
-    });
-    card.append(ingredients);
-    if (recipe.seasoning_note_fr) card.append(textElement("p", "recipe-meta", recipe.seasoning_note_fr));
-    const details = document.createElement("details");
-    details.append(textElement("summary", "", "Préparation"));
-    const steps = document.createElement("ol");
-    recipe.instructions_fr.forEach(step => steps.append(textElement("li", "", step)));
-    details.append(steps);
-    card.append(details);
-    const evidence = document.createElement("details");
-    evidence.className = "recipe-evidence";
-    evidence.append(textElement("summary", "", "Voir la vérification Low FODMAP et les sources"));
-    const reviewLine = textElement("p", "recipe-meta", `Revue de la recette entière : ${recipe.fodmap_reviewer_role}, ${formatDate(recipe.fodmap_reviewed_at, false)} · `);
-    recipe.fodmap_review_source_keys.forEach((sourceKey, index) => {
-      if (index) reviewLine.append(document.createTextNode(" · "));
-      appendCitationLink(reviewLine, sourceKey, recipe.fodmap_review_citation_locator);
-    });
-    evidence.append(reviewLine);
-    if ((recipe.fodmap_review_basis || "ingredient_measurements") === "public_sources") {
-      evidence.append(textElement("p", "recipe-meta", recipe.fodmap_scope_notice_fr || "Contrôle documentaire fondé sur les ressources publiques citées; ce n’est pas une certification."));
-    } else if ((recipe.fodmap_review_basis || "ingredient_measurements") === "external_food_guide") {
-      evidence.append(textElement("p", "recipe-meta", "Pour la phase de restriction : chaque ingrédient, sa préparation et sa portion par personne ont été vérifiés par la personne indiquée auprès du guide alimentaire cité. LOWFO conserve la revue et sa référence, sans recopier les mesures ni les fiches de cette base. Cette vérification n’est pas une certification Monash."));
-    }
-    const evidenceList = document.createElement("ul");
-    for (const ingredient of recipe.ingredients) {
-      const food = getCatalogIngredient(ingredient);
-      const item = document.createElement("li");
-      item.append(textElement("p", "", `${food.name_fr} — portion recette : ${formatNutrient(ingredient.amount_g_per_serving, "g/personne")}`));
-      if ((recipe.fodmap_review_basis || "ingredient_measurements") === "public_sources") {
-        item.append(textElement("p", "recipe-meta", ingredient.fodmap_evidence_fr || "Ingrédient contrôlé à partir des ressources publiques citées."));
-      } else if ((recipe.fodmap_review_basis || "ingredient_measurements") === "external_food_guide") {
-        item.append(textElement("p", "recipe-meta", "Préparation et portion incluses dans la revue de la recette entière."));
-      } else {
-        const assessmentList = document.createElement("ul");
-        const assessments = ingredient.fodmap_assessment_ids.map(id => catalogIndexes.fodmapAssessments.get(id));
-        for (const family of fodmapFamilies) {
-          const assessment = assessments.find(row => row.family === family);
-          const row = document.createElement("li");
-          const status = assessment.assessment_status === "low" ? "bas" : "non détecté";
-          row.append(document.createTextNode(`${fodmapFamilyLabels[family]} : ${status} à ${formatNutrient(assessment.tested_portion_g, "g")} · `));
-          appendCitationLink(row, assessment.source_key, assessment.citation_locator);
-          assessmentList.append(row);
-        }
-        item.append(assessmentList);
-      }
-      const nutrientList = document.createElement("ul");
-      for (const valueId of ingredient.nutrient_value_ids) {
-        const value = catalogIndexes.nutrientValues.get(valueId);
-        const row = document.createElement("li");
-        const unit = value.nutrient === "energy_kcal" ? "kcal" : "g";
-        const displayedValue = value.value_qualifier === "trace" ? "traces" : (value.value_qualifier === "upper_bound" ? "≤" : "") + formatNutrient(value.value, unit);
-        row.append(document.createTextNode(nutrientLabels[value.nutrient] + " : " + displayedValue + " / " + formatNutrient(value.reference_amount_g, "g") + " · "));
-        appendCitationLink(row, value.source_key, value.citation_locator);
-        nutrientList.append(row);
-      }
-      item.append(textElement("p", "recipe-meta", "Données nutritionnelles de référence"), nutrientList);
-      evidenceList.append(item);
-    }
-    evidence.append(evidenceList);
-    evidence.append(textElement("p", "recipe-meta", "Nutrition estimée à partir de Ciqual 2025. Quand Ciqual publie une valeur « < x », la borne x est conservée et affichée avec ≤; les traces ne sont pas ajoutées au total. Les macros restent des estimations."));
-    card.append(evidence);
-    list.append(card);
-  }
+  const sortedRecipes = [...recipeLibrary].sort((a, b) => a.name_fr.localeCompare(b.name_fr, "fr", { sensitivity: "base", numeric: true }));
+  for (const recipe of sortedRecipes) list.append(createRecipeCard(recipe));
 }
 
 function createEntryCard(entry, allowDelete = true) {
@@ -843,6 +846,13 @@ async function renderMenuWeek() {
           ? "Aucun menu généré pour cette semaine"
           : "En attente d’une recette vérifiée pour ce repas";
       item.append(textElement("span", recipe ? "menu-slot-recipe" : "menu-slot-empty", recipe?.name_fr || emptyLabel));
+      if (recipe) {
+        const recipeDetails = document.createElement("details");
+        recipeDetails.className = "menu-slot-recipe-details";
+        recipeDetails.append(textElement("summary", "", "Afficher la recette"));
+        recipeDetails.append(createRecipeCard(recipe));
+        item.append(recipeDetails);
+      }
       card.append(item);
     });
     const dayRecipes = daySlots.map(slot => recipeLibrary.find(recipe => recipe.recipe_key === slot.recipeKey));
